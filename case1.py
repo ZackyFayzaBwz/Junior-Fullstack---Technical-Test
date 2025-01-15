@@ -1,4 +1,3 @@
-# Pertanyaan 1
 fruits = [
     {'fruitId': 1, 'fruitName': 'Apel', 'fruitType': 'IMPORT', 'stock': 10},
     {'fruitId': 2, 'fruitName': 'Kurma', 'fruitType': 'IMPORT', 'stock': 20},
@@ -9,7 +8,26 @@ fruits = [
     {'fruitId': 5, 'fruitName': 'Salak', 'fruitType': 'LOCAL', 'stock': 150}
 ]
 
-def get_unique_fruit_names(fruits):
-    return set(fruit['fruitName'].lower() for fruit in fruits)
+# 1. Buah yang dimiliki Andi
+fruit_names = set(fruit['fruitName'].lower() for fruit in fruits)
+print("Buah yang dimiliki:", fruit_names)
 
-print("Buah yang dimiliki:", get_unique_fruit_names(fruits))
+# 2. Jumlah wadah dan isi per wadah
+from collections import defaultdict
+grouped_by_type = defaultdict(list)
+for fruit in fruits:
+    grouped_by_type[fruit['fruitType']].append(fruit['fruitName'])
+
+print("Jumlah wadah:", len(grouped_by_type))
+for fruit_type, names in grouped_by_type.items():
+    print(f"Wadah {fruit_type}: {set(names)}")
+
+# 3. Total stok buah per wadah
+total_stock_by_type = defaultdict(int)
+for fruit in fruits:
+    total_stock_by_type[fruit['fruitType']] += fruit['stock']
+
+print("Total stok per wadah:", dict(total_stock_by_type))
+
+# 4. Komentar terkait kasus
+print("Komentar: Perlu memperbaiki duplikasi ID dan memastikan konsistensi nama buah.")
