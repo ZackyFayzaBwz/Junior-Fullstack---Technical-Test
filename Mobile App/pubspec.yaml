@@ -1,0 +1,38 @@
+name: Technical Test
+description: A new Flutter project.
+version: 1.0.0+1
+environment: 
+  sdk: ^3.6.0
+dependencies: 
+  flutter: 
+    sdk: flutter
+  flutter_localizations: 
+    sdk: flutter
+  cached_network_image: ^3.4.1
+  flutter_svg: ^2.0.16
+  flutter_svg_provider: ^1.0.7
+  responsive_grid_list: ^1.4.0
+  connectivity_plus: ^6.1.1
+dev_dependencies: 
+  flutter_test: 
+    sdk: flutter
+flutter: 
+  uses-material-design: true
+  assets: 
+    - assets/
+    - assets/images/
+  fonts: 
+    - family: Plus Jakarta Sans
+      fonts: 
+        - asset: assets/fonts/PlusJakartaSansRegular.ttf
+          weight: 400
+        - asset: assets/fonts/PlusJakartaSansBold.ttf
+          weight: 700
+    - family: Roboto
+      fonts: 
+        - asset: assets/fonts/RobotoThin.ttf
+          weight: 100
+        - asset: assets/fonts/RobotoMedium.ttf
+          weight: 500
+        - asset: assets/fonts/RobotoRegular.ttf
+          weight: 400
